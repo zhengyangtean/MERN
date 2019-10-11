@@ -1,12 +1,12 @@
 FROM node:10
 
 # Create app directory
-WORKDIR /usr/src/
+WORKDIR /user/app
 
 # Install app dependencies
-COPY . /usr/src/
-
+COPY package*.json ./
 RUN npm install
+
 # If you are building your code for production
 # RUN npm ci --only=production
 
@@ -14,4 +14,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 4000
-CMD [ "nodemon", "server"]
+CMD [ "npm", "start"]
