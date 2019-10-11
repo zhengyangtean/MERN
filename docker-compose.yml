@@ -6,7 +6,7 @@ services:
     environment:
       MONGO_INITDB_DATABASE: "todos"
     ports:
-      - 27017:27017
+      - "27017:27017"
   backend:
     build: 
       context: ./backend/
